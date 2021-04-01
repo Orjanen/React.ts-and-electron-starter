@@ -1,23 +1,16 @@
 import React, {Fragment} from 'react';
-import {Container} from "semantic-ui-react";
-import { Route, Switch } from 'react-router-dom';
+import {Route} from 'react-router-dom';
 
 import HomePage from "./pages/HomePage";
+import Navbar from "./components/navbar/Navbar";
 
 const App = () => {
-  return (
-      <Fragment>
-        <Route path='/' exact component={HomePage}/>
-        <Route path={'/(.+)'} render={() => (
-            <Fragment>
-              <Container style={{marginTop: '7em'}}>
-                <Switch>
-                </Switch>
-              </Container>
-            </Fragment>
-        )}/>
-      </Fragment>
-  );
+    return (
+        <Fragment>
+            <Navbar/>
+            <Route path='/' exact component={HomePage}/>
+        </Fragment>
+    );
 }
 
 export default App;
